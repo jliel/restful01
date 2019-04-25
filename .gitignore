@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+restful01/__init__.py
+
+__init__.py
+settings.json

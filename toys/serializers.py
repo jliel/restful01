@@ -4,19 +4,29 @@ from rest_framework import serializers
 from .models import Toy
 
 
-class ToySerializer(serializers.Serializer):
+# class ToySerializer(serializers.Serializer):
+class ToySerializer(serializers.ModelSerializer):
     # Campos que seran serializados
-    pk = serializers.IntegerField(read_only=True)
-    name = serializers.CharField(max_length=150)
-    description = serializers.CharField(max_length=250)
-    toy_category = serializers.CharField(max_length=200)
-    release_date = serializers.DateTimeField()
-    was_included_in_home = serializers.BooleanField(required=False)
+    # pk = serializers.IntegerField(read_only=True)
+    # name = serializers.CharField(max_length=150)
+    # description = serializers.CharField(max_length=250)
+    # toy_category = serializers.CharField(max_length=200)
+    # release_date = serializers.DateTimeField()
+    # was_included_in_home = serializers.BooleanField(required=False)
+    class Meta:
+        model = Toy
+        fields = ('id',
+                   'name',
+                   'description',
+                   'toy_category',
+                   'was_included_in_home')
 
+    # Si se hereda de modelserializer no es necesario sobrecargar estos metodos
+    # modelserializer tiene una implementacion de estos dos metodos
     # Siempre sobreescribir estos dos metodos o una excepcion NotImplementedError sera lanzada
     # cada metodo recibe los datos validados como argumento
     # Crea una nueva instancia de Toy y la devuelve
-    def create(self, validated_data):
+    """ def create(self, validated_data):
         # Se crea un nuevo toy basado en los datos enviados
         return Toy.objects.create(**validated_data)
 
@@ -29,4 +39,4 @@ class ToySerializer(serializers.Serializer):
         instance.was_included_in_home = validated_data.get('was_included_in_home', instance.was_included_in_home)
         # Actualiza la isntancia y devuelve el objeto actualizado
         instance.save()
-        return instance
+        return instance """

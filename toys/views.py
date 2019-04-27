@@ -49,10 +49,10 @@ def toy_list(request):
 @csrf_exempt
 # Recibe un HttpRequest y el identificador del toy que sera modificado
 # es capaz de procesar tres tipos de verbo Http, GET, PUT y DELETE
-def toy_detail(request, pk):
+def toy_detail(request, id):
     # sin importar el tipo de peticion siempre se intenta obtener el toy de la bd
     try:
-        toy = Toy.objects.get(pk=pk)
+        toy = Toy.objects.get(pk=id)
     except Toy.DoesNotExist:
         return HttpResponse(status=status.HTTP_404_NOT_FOUND)
 

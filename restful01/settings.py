@@ -123,3 +123,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# especifica los valores de las clases default que se quieren usar para parsing backends
+""" DEFAULT_PARSER_CLASSES = (
+    'rest_framework.parsers.JSONParser',
+    'rest_framework.parsers.FormParser',
+    'rest_framework.parsers.MultiPartParser'
+) """
+
+# tupla de string cuyos valores indican las clases default que seran usadas para renderizar backends
+""" DEFAULT_RENDERER_CLASSES = (
+    'rest_framework.renderers.JSONRenderer',
+    'rest_framework.renderers.BrowsableAPIRenderer',
+) """

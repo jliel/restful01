@@ -43,7 +43,7 @@ class Pilot(models.Model):
         default=MALE,
     )
     races_count = models.IntegerField()
-    inserted_timestamp = models.DateTimeField(auto_add_now=True)
+    inserted_timestamp = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ('name',)

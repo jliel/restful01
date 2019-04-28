@@ -106,3 +106,5 @@ restful01/__init__.py
 
 __init__.py
 settings.json
+migrations/
+drones/migrations/0001_initial.py

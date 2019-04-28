@@ -54,7 +54,7 @@ class CompetitionDetail(generics.RetrieveUpdateDestroyAPIView):
     name = 'competition-detail'
 
 
-class Apiroot(generics.GenericAPIView):
+class ApiRoot(generics.GenericAPIView):
     name = 'api-root'
     def get(self, request, *args, **kwargs):
         return Response({

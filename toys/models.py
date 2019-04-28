@@ -6,7 +6,7 @@ class Toy(models.Model):
     name = models.CharField(max_length=150, blank=False, default='')
     description = models.CharField(max_length=250, blank=False, default='')
     toy_category = models.CharField(max_length=200, blank=False, default='')
-    release_date = models.DateTimeField()
+    release_date = models.DateTimeField(null=True)
     was_included_in_home = models.BooleanField(default=False)
 
     class Meta:

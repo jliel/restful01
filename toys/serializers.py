@@ -19,6 +19,7 @@ class ToySerializer(serializers.ModelSerializer):
                    'name',
                    'description',
                    'toy_category',
+                   'release_date',
                    'was_included_in_home')
 
     # Si se hereda de modelserializer no es necesario sobrecargar estos metodos

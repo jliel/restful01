@@ -9,7 +9,7 @@ urlpatterns = [
     path('drones/<int:pk>', views.DroneDetail.as_view(), name=views.DroneDetail.name),
     path('pilots/', views.PilotList.as_view(), name=views.PilotList.name),
     path('pilots/<int:pk>', views.PilotDetail.as_view(), name=views.PilotDetail.name),
-    path('competition/', views.CompetitionList.as_view(), name=views.CompetitionList.name),
-    path('competition/<int:pk>', views.CompetitionDetail.as_view(), name=views.CompetitionDetail.name),
+    path('competitions/', views.CompetitionList.as_view(), name=views.CompetitionList.name),
+    path('competitions/<int:pk>', views.CompetitionDetail.as_view(), name=views.CompetitionDetail.name),
     path('', views.ApiRoot.as_view(), name=views.ApiRoot.name)
 ]

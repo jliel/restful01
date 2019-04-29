@@ -4,6 +4,7 @@ import drones.views
 
 
 class DroneCategorySerializer(serializers.HyperlinkedModelSerializer):
+    # related name
     drones = serializers.HyperlinkedRelatedField(
         many=True,
         read_only=True,

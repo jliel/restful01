@@ -145,6 +145,7 @@ STATIC_URL = '/static/'
 # pagination
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS':
-    'rest_framework.pagination.LimitOffsetPagination',
+    # 'rest_framework.pagination.LimitOffsetPagination',
+    'drones.custompagination.LimitOffsetPaginationWithUpperBound',
     'PAGE_SIZE': 4
 }

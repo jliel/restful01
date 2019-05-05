@@ -5,12 +5,24 @@ from rest_framework.reverse import reverse
 from .models import DroneCategory, Drone, Pilot, Competition
 from .serializers import DroneCategorySerializer, DroneSerializer, \
     PilotSerializer, PilotCompetitionSerializer
+from rest_framework import filters
+from django_filters import AllValuesFilter, DateTimeFilter, NumberFilter
 
 
 class DroneCategoryList(generics.ListCreateAPIView):
     queryset = DroneCategory.objects.all()
     serializer_class = DroneCategorySerializer
     name = 'dronecategory-list'
+    filter_fields = (
+        'name',
+    )
+    search_fields = (
+        # para limitar el comportamiento de la busqueda a "comienza con"
+        '^name',
+    )
+    ordering_fields = (
+        'name',
+    )
 
 class DroneCategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = DroneCategory.objects.all()

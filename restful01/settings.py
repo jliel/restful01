@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_filters',
     'toys',
     'drones',
 ]
@@ -147,5 +148,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS':
     # 'rest_framework.pagination.LimitOffsetPagination',
     'drones.custompagination.LimitOffsetPaginationWithUpperBound',
-    'PAGE_SIZE': 4
+    'PAGE_SIZE': 4,
+    # filter framework
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter',
+        'rest_framework.filters.SearchFilter',
+    )
 }
